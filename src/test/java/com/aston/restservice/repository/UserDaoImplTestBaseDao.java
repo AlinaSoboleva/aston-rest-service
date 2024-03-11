@@ -11,13 +11,14 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.aston.restservice.testData.TestConstants.*;
+import static com.aston.restservice.testUtil.TestGetProvider.getUser;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 
-public class UserDaoImplTest extends AbstractBaseDaoTest {
+public class UserDaoImplTestBaseDao extends TestBaseDao {
 
     private UserDaoImpl userDao;
 
@@ -27,7 +28,7 @@ public class UserDaoImplTest extends AbstractBaseDaoTest {
     void setUp() {
         userDao = (UserDaoImpl) GetProvider.getUserDao();
         userDao.setConnectionBuilder(getConnectionBuilder());
-        firstUser = getFirstUser();
+        firstUser = getUser(FIRST_USER_NAME, FIRST_USER_EMAIL);
     }
 
 
@@ -49,7 +50,7 @@ public class UserDaoImplTest extends AbstractBaseDaoTest {
     public void saveUser_whenEmailExist_ThrowPSQLException() throws SQLException {
         Optional<User> savedUserOpt = userDao.save(firstUser);
 
-        User secondUser = getSecondUser();
+        User secondUser = getUser(SECOND_USER_NAME, SECOND_USER_EMAIL);
         secondUser.setEmail(FIRST_USER_EMAIL);
 
         Exception exception = assertThrows(SQLException.class, () ->
@@ -104,7 +105,7 @@ public class UserDaoImplTest extends AbstractBaseDaoTest {
     public void findAllUsers_usualCase_returnUsersList() throws SQLException {
         Optional<User> savedUserOpt = userDao.save(firstUser);
 
-        User secondUser = getSecondUser();
+        User secondUser = getUser(SECOND_USER_NAME, SECOND_USER_EMAIL);
         Optional<User> savedUserOpt2 = userDao.save(secondUser);
 
         List<User> result = userDao.findAll();

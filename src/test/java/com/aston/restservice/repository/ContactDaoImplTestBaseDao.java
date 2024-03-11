@@ -11,14 +11,14 @@ import org.junit.jupiter.api.Test;
 import java.sql.SQLException;
 import java.util.Optional;
 
-import static com.aston.restservice.testData.TestConstants.FIRST_ID;
-import static com.aston.restservice.testData.TestConstants.UPDATED_CONTACT_ADDRESS;
+import static com.aston.restservice.testData.TestConstants.*;
+import static com.aston.restservice.testUtil.TestGetProvider.getContact;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-public class ContactDaoImplTest extends EventDaoImplTest {
+public class ContactDaoImplTestBaseDao extends EventDaoImplTestBaseDao {
 
     ContactDaoImpl contactDao;
 
@@ -31,7 +31,7 @@ public class ContactDaoImplTest extends EventDaoImplTest {
         contactDao = (ContactDaoImpl) GetProvider.getContactDao();
         contactDao.setConnectionBuilder(getConnectionBuilder());
         savedEvent = eventDao.save(firstEvent).get();
-        contact = getContact(savedEvent.getId());
+        contact = getContact(CONTACT_PHONE, CONTACT_ADDRESS,savedEvent.getId());
     }
 
     @Test

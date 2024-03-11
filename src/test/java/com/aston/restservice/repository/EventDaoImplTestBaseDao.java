@@ -8,7 +8,6 @@ import com.aston.restservice.util.GetProvider;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestInstance;
 import org.postgresql.util.PSQLException;
 
 import java.sql.SQLException;
@@ -16,12 +15,14 @@ import java.util.List;
 import java.util.Optional;
 
 import static com.aston.restservice.testData.TestConstants.*;
+import static com.aston.restservice.testUtil.TestGetProvider.getEvent;
+import static com.aston.restservice.testUtil.TestGetProvider.getUser;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class EventDaoImplTest extends AbstractBaseDaoTest {
+public class EventDaoImplTestBaseDao extends TestBaseDao {
 
     EventDaoImpl eventDao;
 
@@ -40,14 +41,10 @@ public class EventDaoImplTest extends AbstractBaseDaoTest {
         eventDao = (EventDaoImpl) GetProvider.getEventDao();
         eventDao.setConnectionBuilder(getConnectionBuilder());
 
-        firstUser = getFirstUser();
-
-        firstEvent = new Event();
-        firstEvent.setTitle(FIRST_EVENT_TITLE);
-        firstEvent.setDescription(FIRST_EVENT_DESCRIPTION);
-
+        firstUser = getUser(FIRST_USER_NAME, FIRST_USER_EMAIL);
         initiator = userDao.save(firstUser).get();
-        firstEvent.setInitiator(initiator);
+
+        firstEvent = getEvent(FIRST_EVENT_TITLE, FIRST_EVENT_DESCRIPTION, initiator);
     }
 
     @AfterEach
@@ -126,7 +123,7 @@ public class EventDaoImplTest extends AbstractBaseDaoTest {
 
     @Test
     public void findAll_usualCase_returnEventList() throws SQLException {
-        Event secondEvent = getSecondEvent(initiator);
+        Event secondEvent = getEvent(SECOND_EVENT_TITLE, SECOND_EVENT_DESCRIPTION, initiator);
 
         Event savedEvent = eventDao.save(firstEvent).get();
         Event savedEvent2 = eventDao.save(secondEvent).get();
@@ -143,21 +140,21 @@ public class EventDaoImplTest extends AbstractBaseDaoTest {
     @Test
     public void addTwoParticipantsAndDeleteParticipant_usualCase() throws SQLException {
         Event savedEvent = eventDao.save(firstEvent).get();
-        User participant =  userDao.save(getSecondUser()).get();
-        User participant2 =  userDao.save(getThridUser()).get();
+        User participant = userDao.save(getUser(SECOND_USER_NAME, SECOND_USER_EMAIL)).get();
+        User participant2 = userDao.save(getUser(THIRD_USER_NAME, THIRD_USER_EMAIL)).get();
 
         eventDao.addParticipants(savedEvent.getId(), participant.getId());
         eventDao.addParticipants(savedEvent.getId(), participant2.getId());
         Event eventWithParticipant = eventDao.findById(savedEvent.getId()).get();
 
-        assertThat(eventWithParticipant.getParticipants(),hasSize(2));
+        assertThat(eventWithParticipant.getParticipants(), hasSize(2));
         assertTrue(eventWithParticipant.getParticipants().contains(participant));
         assertTrue(eventWithParticipant.getParticipants().contains(participant2));
 
         eventDao.addParticipants(savedEvent.getId(), participant.getId());
 
         Event eventWithoutParticipant = eventDao.findById(savedEvent.getId()).get();
-        assertThat(eventWithoutParticipant.getParticipants(),hasSize(1));
+        assertThat(eventWithoutParticipant.getParticipants(), hasSize(1));
         assertFalse(eventWithoutParticipant.getParticipants().contains(participant));
         assertTrue(eventWithoutParticipant.getParticipants().contains(participant2));
 

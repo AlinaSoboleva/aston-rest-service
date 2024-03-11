@@ -11,20 +11,11 @@ import com.aston.restservice.repository.UserDao;
 import com.aston.restservice.repository.impl.ContactDaoImpl;
 import com.aston.restservice.repository.impl.EventDaoImpl;
 import com.aston.restservice.repository.impl.UserDaoImpl;
-import com.aston.restservice.service.ContactService;
-import com.aston.restservice.service.EventService;
-import com.aston.restservice.service.UserService;
-import com.aston.restservice.service.impl.ContactServiceImpl;
-import com.aston.restservice.service.impl.EventServiceImpl;
-import com.aston.restservice.service.impl.UserServiceImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.HashSet;
-import java.util.Set;
 import java.util.stream.Collectors;
 
 public class GetProvider {
@@ -46,18 +37,6 @@ public class GetProvider {
 
     public static ContactDao getContactDao() {
         return ContactDaoImpl.getInstance();
-    }
-
-    public static UserService getUserService() {
-        return UserServiceImpl.getInstance();
-    }
-
-    public static EventService getEventService() {
-        return EventServiceImpl.getInstance();
-    }
-
-    public static ContactService getContactService() {
-        return ContactServiceImpl.getInstance();
     }
 
     public static User getUser(Long id) throws SQLException {

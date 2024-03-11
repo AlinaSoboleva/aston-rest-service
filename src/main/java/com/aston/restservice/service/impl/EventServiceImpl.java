@@ -7,7 +7,6 @@ import com.aston.restservice.dto.UserDto;
 import com.aston.restservice.exception.HttpException;
 import com.aston.restservice.mapper.EventMapper;
 import com.aston.restservice.mapper.UserMapper;
-import com.aston.restservice.model.Contact;
 import com.aston.restservice.model.Event;
 import com.aston.restservice.model.User;
 import com.aston.restservice.repository.EventDao;
@@ -23,19 +22,10 @@ import java.util.stream.Collectors;
 
 public class EventServiceImpl implements EventService {
 
-    private static EventServiceImpl INSTANCE;
+    private final EventDao eventDao;
 
-    private static EventDao eventDao;
-
-    private EventServiceImpl() {
-    }
-
-    public static synchronized EventServiceImpl getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new EventServiceImpl();
-            eventDao = GetProvider.getEventDao();
-        }
-        return INSTANCE;
+    public EventServiceImpl(EventDao eventDao) {
+        this.eventDao = eventDao;
     }
 
     @Override
@@ -48,6 +38,7 @@ public class EventServiceImpl implements EventService {
                     new HttpException("Event was not saved " + eventDto));
         } else {
             savedEvent = GetProvider.getEvent(eventDto.getId());
+            Validator.checkEventInitiator(savedEvent, userId);
             savedEvent.setTitle(eventDto.getTitle() == null ? savedEvent.getTitle() : eventDto.getTitle());
             savedEvent.setDescription(eventDto.getDescription() == null ? savedEvent.getDescription() : eventDto.getDescription());
             eventDao.update(savedEvent);
@@ -56,12 +47,12 @@ public class EventServiceImpl implements EventService {
     }
 
     @Override
-    public List<EventShortDto> getAllEvents(String requestPath) throws SQLException {
+    public List<EventShortDto> getEvents(String requestPath) throws SQLException {
         List<Event> events = new ArrayList<>();
         if (requestPath != null) {
             Long id = GetProvider.getEntityId(requestPath);
-            Event event = GetProvider.getEvent(id);
-            events.add(event);
+            Event eventById = GetProvider.getEvent(id);
+            events.add(eventById);
         } else {
             events = eventDao.findAll();
         }
@@ -73,7 +64,6 @@ public class EventServiceImpl implements EventService {
         Long id = GetProvider.getEntityId(requestPath);
         Event event = GetProvider.getEvent(id);
         Validator.checkEventInitiator(event, userId);
-        Contact contact = event.getContact();
         eventDao.deleteById(id);
 
         return id;

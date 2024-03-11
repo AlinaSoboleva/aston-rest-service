@@ -37,6 +37,17 @@ public class EventMapper {
         return event;
     }
 
+    public static EventDto toDto(Event event) {
+        if (event == null) return null;
+
+        EventDto eventDto = new EventDto();
+        eventDto.setTitle(event.getTitle());
+        eventDto.setDescription(event.getDescription());
+        eventDto.setId(event.getId());
+
+        return eventDto;
+    }
+
 
     public static EventResponseDto toResponseDto(Event event, Set<UserDto> participants) {
         EventResponseDto eventResponseDto = toResponseDto(event);

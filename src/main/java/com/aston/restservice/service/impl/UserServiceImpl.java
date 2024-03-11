@@ -13,18 +13,12 @@ import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
-    private static final UserServiceImpl INSTANCE = new UserServiceImpl();
+    private final UserDao userDao;
 
-    private static UserDao userDao;
-
-    private UserServiceImpl() {
-        userDao = GetProvider.getUserDao();
-
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
     }
 
-    public static synchronized UserServiceImpl getInstance() {
-        return INSTANCE;
-    }
 
     @Override
     public UserDto saveUser(UserDto userDto) throws SQLException {

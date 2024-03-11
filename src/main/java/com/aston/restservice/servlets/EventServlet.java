@@ -10,10 +10,13 @@ import com.aston.restservice.exception.HttpException;
 import com.aston.restservice.exception.Response;
 import com.aston.restservice.service.ContactService;
 import com.aston.restservice.service.EventService;
+import com.aston.restservice.service.impl.ContactServiceImpl;
+import com.aston.restservice.service.impl.EventServiceImpl;
 import com.aston.restservice.util.Constants;
 import com.aston.restservice.util.GetProvider;
 import com.aston.restservice.util.ResponseSender;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import lombok.extern.slf4j.Slf4j;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -22,8 +25,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.List;
 
+@Slf4j
 @WebServlet("/event/*")
 public class EventServlet extends HttpServlet {
 
@@ -31,12 +36,12 @@ public class EventServlet extends HttpServlet {
     private final ContactService contactService;
 
     public EventServlet() {
-        this.eventService = GetProvider.getEventService();
-        this.contactService = GetProvider.getContactService();
+        this.eventService = new EventServiceImpl(GetProvider.getEventDao());
+        this.contactService = new ContactServiceImpl(GetProvider.getContactDao());
     }
 
     @Override
-    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) {
         EventResponseDto eventResponseDto;
         try {
             Long userId = Long.valueOf(req.getHeader(Constants.X_SHARER_USER_ID));
@@ -50,15 +55,15 @@ public class EventServlet extends HttpServlet {
                 throw new HttpException("Incorrect request path");
             }
         } catch (SQLException | EntityNotFoundException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST,
                     new Response(e.getMessage()));
         } catch (HttpException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
         }
@@ -68,18 +73,18 @@ public class EventServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         String requestPath = req.getPathInfo();
         try {
-            List<EventShortDto> events = eventService.getAllEvents(requestPath);
-            if (events.size() == 1) {
+            List<EventShortDto> events = eventService.getEvents(requestPath);
+            if (requestPath != null) {
                 ResponseSender.sendResponse(resp, HttpServletResponse.SC_OK, events.get(0));
             } else {
                 ResponseSender.sendResponse(resp, HttpServletResponse.SC_OK, events);
             }
         } catch (SQLException | EntityNotFoundException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
         } catch (HttpException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
         }
@@ -105,22 +110,22 @@ public class EventServlet extends HttpServlet {
                 ResponseSender.sendResponse(resp, HttpServletResponse.SC_CREATED, eventResponseDto);
             }
         } catch (SQLException | EntityNotFoundException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST,
                     new Response("Header x-sharer-user-id must contain userId"));
         } catch (HttpException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
         }
     }
 
     @Override
-    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doDelete(HttpServletRequest req, HttpServletResponse resp) {
         String requestPath = req.getPathInfo();
         try {
             Long userId = Long.valueOf(req.getHeader(Constants.X_SHARER_USER_ID));
@@ -137,19 +142,19 @@ public class EventServlet extends HttpServlet {
                         new Response(String.format("Event with id %d was successfully deleted", id)));
             }
         } catch (SQLException | EntityNotFoundException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
         } catch (ConflictException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_CONFLICT,
                     new Response(e.getMessage()));
         } catch (NumberFormatException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST,
                     new Response("Header x-sharer-user-id must contain userId"));
         } catch (HttpException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
         }
@@ -160,6 +165,7 @@ public class EventServlet extends HttpServlet {
         try {
             eventDto = GetProvider.getObjectMapper().readValue(body, EventDto.class);
         } catch (JsonProcessingException e) {
+            log.warn(Arrays.toString(e.getStackTrace()));
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST,
                     new Response("Incorrect Json received"));
         }
@@ -185,7 +191,7 @@ public class EventServlet extends HttpServlet {
         try {
             contactDto = GetProvider.getObjectMapper().readValue(body, ContactDto.class);
         } catch (JsonProcessingException e) {
-            e.printStackTrace();
+            log.warn(Arrays.toString(e.getStackTrace()));
             ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST,
                     new Response("Incorrect Json received"));
         }

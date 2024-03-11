@@ -14,19 +14,10 @@ import java.util.Optional;
 
 public class ContactServiceImpl implements ContactService {
 
-    private static ContactServiceImpl INSTANCE;
+    private final ContactDao contactDao;
 
-    private static ContactDao contactDao;
-
-    private ContactServiceImpl() {
-    }
-
-    public static synchronized ContactServiceImpl getInstance() {
-        if (INSTANCE == null) {
-            INSTANCE = new ContactServiceImpl();
-            contactDao = GetProvider.getContactDao();
-        }
-        return INSTANCE;
+    public ContactServiceImpl(ContactDao contactDao) {
+        this.contactDao = contactDao;
     }
 
     @Override

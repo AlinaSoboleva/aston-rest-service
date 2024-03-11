@@ -11,7 +11,7 @@ public interface EventService {
 
     EventResponseDto saveEvent(EventDto userDto, Long userId) throws SQLException;
 
-    List<EventShortDto> getAllEvents(String requestPath) throws SQLException;
+    List<EventShortDto> getEvents(String requestPath) throws SQLException;
 
     Long deleteEvent(String requestPath, Long userId) throws SQLException;
 
