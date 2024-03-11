@@ -12,7 +12,7 @@ import org.testcontainers.containers.PostgreSQLContainer;
 import static com.aston.restservice.testData.TestConstants.*;
 
 @TestInstance(value = TestInstance.Lifecycle.PER_CLASS)
-public abstract class AbstractBaseDaoTest {
+public class TestBaseDao {
 
     protected final PostgreSQLContainer<?> postgres = new PostgreSQLContainer<>("postgres:14-alpine");
 
@@ -37,46 +37,5 @@ public abstract class AbstractBaseDaoTest {
     @AfterAll
     void stop() {
         postgres.stop();
-    }
-
-    protected Event getSecondEvent(User initiator) {
-        Event secondEvent = new Event();
-        secondEvent.setTitle(SECOND_EVENT_TITLE);
-        secondEvent.setDescription(SECOND_EVENT_DESCRIPTION);
-        secondEvent.setInitiator(initiator);
-        return secondEvent;
-    }
-
-    protected User getFirstUser() {
-        User secondUser = new User();
-        secondUser.setName(FIRST_USER_NAME);
-        secondUser.setEmail(FIRST_USER_EMAIL);
-
-        return secondUser;
-    }
-
-    protected User getSecondUser() {
-        User secondUser = new User();
-        secondUser.setName(SECOND_USER_NAME);
-        secondUser.setEmail(SECOND_USER_EMAIL);
-
-        return secondUser;
-    }
-
-    protected User getThridUser() {
-        User secondUser = new User();
-        secondUser.setName(THIRD_USER_NAME);
-        secondUser.setEmail(THIRD_USER_EMAIL);
-
-        return secondUser;
-    }
-
-    protected Contact getContact(Long eventId) {
-        Contact contact = new Contact();
-        contact.setPhone(CONTACT_PHONE);
-        contact.setAddress(CONTACT_ADDRESS);
-        contact.setEventId(eventId);
-
-        return contact;
     }
 }

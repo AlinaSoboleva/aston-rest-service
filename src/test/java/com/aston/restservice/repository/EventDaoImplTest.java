@@ -22,7 +22,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class EventDaoImplTestBaseDao extends TestBaseDao {
+public class EventDaoImplTest extends TestBaseDao {
 
     EventDaoImpl eventDao;
 

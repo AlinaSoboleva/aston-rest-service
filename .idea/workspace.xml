@@ -9,11 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b34b5111-3dfa-408b-bb73-62acf31c1c08" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b34b5111-3dfa-408b-bb73-62acf31c1c08" name="Changes" comment="add test">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/AbstractBaseDaoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/TestBaseDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/ContactDaoImplTestBaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/ContactDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/EventDaoImplTestBaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/EventDaoImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/UserDaoImplTestBaseDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/UserDaoImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,81 +59,82 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
-    &quot;Database.Console.ShowToolbar&quot;: &quot;false&quot;,
-    &quot;JUnit.All in aston-rest-service.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.ContactDaoImplTest.deleteById_usualCase.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.ContactDaoImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContactDaoImplTest.findById_whenContactNotFound_returnNull.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.ContactDaoImplTest.findById_whenContactNotFound_throwException.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ContactDaoImplTest.saveContact_usualCase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContactDaoImplTest.updateContact_usualCase.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.EventDaoImplTest.addAndDeleteParticipant_usualCase.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.EventDaoImplTest.addParticipant_usualCase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EventDaoImplTest.addTwoParticipantsAndDeleteParticipant_usualCase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EventDaoImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EventDaoImplTest.findAll_usualCase_returnEventList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EventDaoImplTest.findEventById_usualCase_returnEvent.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EventDaoImplTest.findEventById_whenEventNotFount_returnNull.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EventDaoImplTest.saveEvent_usualCase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EventDaoImplTest.saveEvent_whenInitiatorIsNull_throwSQLException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.EventDaoImplTest.updateEventTitle_usualCase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.findAllUsers_usualCase_returnUsersList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.findUserById_usualCase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.findUserById_whenIdNotFound_returnNull.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.saveUser.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.saveUser_usualCase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.saveUser_whenEmailExist_ThrowPSQLException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.saveUser_whenEmailIsNull_ThrowPSQLException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.saveUser_whenNameAndEmailExist.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.UserDaoImplTest.saveUser_whenNameAndEmailExist_.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.UserDaoImplTest.saveUser_whenNameAndEmailExist_ThrowPSQLException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.saveUser_whenNameIsNull_ThrowPSQLException.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.updateUserNameAndEmail_usualCase.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserDaoImplTest.updateUserName_usualCase.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.UserServiceImplTest.getAllUsers_returnUsersList.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.UserServiceImplTest.saveUser.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServletTest.doGet.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UserServletTest.doPost.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.UserServletTest.doPostTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.UserServletTest.doPost_whenSendPostRequest_returnStatusIsCreated.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.com.aston.restservice.repository in aston-rest-service.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in aston-rest-service.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.repository in aston-rest-service.executor&quot;: &quot;Coverage&quot;,
-    &quot;JUnit.restservice in aston-rest-service.executor&quot;: &quot;Coverage&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.aston-rest-service [clean,compile].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.aston-rest-service [import,-U].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;Tomcat Server.Tomcat 9.0.85.executor&quot;: &quot;Debug&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/alina/dev2/aston-rest-service/src/test/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "Database.Console.ShowToolbar": "false",
+    "JUnit.All in aston-rest-service.executor": "Coverage",
+    "JUnit.ContactDaoImplTest.deleteById_usualCase.executor": "Coverage",
+    "JUnit.ContactDaoImplTest.executor": "Run",
+    "JUnit.ContactDaoImplTest.findById_whenContactNotFound_returnNull.executor": "Coverage",
+    "JUnit.ContactDaoImplTest.findById_whenContactNotFound_throwException.executor": "Debug",
+    "JUnit.ContactDaoImplTest.saveContact_usualCase.executor": "Run",
+    "JUnit.ContactDaoImplTest.updateContact_usualCase.executor": "Coverage",
+    "JUnit.EventDaoImplTest.addAndDeleteParticipant_usualCase.executor": "Debug",
+    "JUnit.EventDaoImplTest.addParticipant_usualCase.executor": "Run",
+    "JUnit.EventDaoImplTest.addTwoParticipantsAndDeleteParticipant_usualCase.executor": "Run",
+    "JUnit.EventDaoImplTest.executor": "Run",
+    "JUnit.EventDaoImplTest.findAll_usualCase_returnEventList.executor": "Run",
+    "JUnit.EventDaoImplTest.findEventById_usualCase_returnEvent.executor": "Run",
+    "JUnit.EventDaoImplTest.findEventById_whenEventNotFount_returnNull.executor": "Run",
+    "JUnit.EventDaoImplTest.saveEvent_usualCase.executor": "Run",
+    "JUnit.EventDaoImplTest.saveEvent_whenInitiatorIsNull_throwSQLException.executor": "Run",
+    "JUnit.EventDaoImplTest.updateEventTitle_usualCase.executor": "Run",
+    "JUnit.EventServiceImplTest.executor": "Run",
+    "JUnit.UserDaoImplTest.executor": "Run",
+    "JUnit.UserDaoImplTest.findAllUsers_usualCase_returnUsersList.executor": "Run",
+    "JUnit.UserDaoImplTest.findUserById_usualCase.executor": "Run",
+    "JUnit.UserDaoImplTest.findUserById_whenIdNotFound_returnNull.executor": "Run",
+    "JUnit.UserDaoImplTest.saveUser.executor": "Run",
+    "JUnit.UserDaoImplTest.saveUser_usualCase.executor": "Run",
+    "JUnit.UserDaoImplTest.saveUser_whenEmailExist_ThrowPSQLException.executor": "Run",
+    "JUnit.UserDaoImplTest.saveUser_whenEmailIsNull_ThrowPSQLException.executor": "Run",
+    "JUnit.UserDaoImplTest.saveUser_whenNameAndEmailExist.executor": "Debug",
+    "JUnit.UserDaoImplTest.saveUser_whenNameAndEmailExist_.executor": "Coverage",
+    "JUnit.UserDaoImplTest.saveUser_whenNameAndEmailExist_ThrowPSQLException.executor": "Run",
+    "JUnit.UserDaoImplTest.saveUser_whenNameIsNull_ThrowPSQLException.executor": "Run",
+    "JUnit.UserDaoImplTest.updateUserNameAndEmail_usualCase.executor": "Run",
+    "JUnit.UserDaoImplTest.updateUserName_usualCase.executor": "Debug",
+    "JUnit.UserServiceImplTest.getAllUsers_returnUsersList.executor": "Debug",
+    "JUnit.UserServiceImplTest.saveUser.executor": "Run",
+    "JUnit.UserServletTest.doGet.executor": "Run",
+    "JUnit.UserServletTest.doPost.executor": "Debug",
+    "JUnit.UserServletTest.doPostTest.executor": "Debug",
+    "JUnit.UserServletTest.doPost_whenSendPostRequest_returnStatusIsCreated.executor": "Coverage",
+    "JUnit.com.aston.restservice.repository in aston-rest-service.executor": "Run",
+    "JUnit.java in aston-rest-service.executor": "Coverage",
+    "JUnit.repository in aston-rest-service.executor": "Coverage",
+    "JUnit.restservice in aston-rest-service.executor": "Coverage",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "Maven.aston-rest-service [clean,compile].executor": "Run",
+    "Maven.aston-rest-service [import,-U].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "Tomcat Server.Tomcat 9.0.85.executor": "Debug",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/alina/dev2/aston-rest-service/src/test/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.aston.restservice.service" />
@@ -161,7 +163,7 @@
       <command value="mvn clean compile" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.UserServiceImplTest.saveUser">
+  <component name="RunManager" selected="Tomcat Server.Tomcat 9.0.85">
     <configuration name="ContactDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aston-rest-service" />
       <extension name="coverage">
@@ -177,31 +179,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EventDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EventServiceImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="aston-rest-service" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.aston.restservice.repository.*" />
+          <option name="PATTERN" value="com.aston.restservice.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.aston.restservice.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.aston.restservice.repository.EventDaoImplTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="aston-rest-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.aston.restservice.repository.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.aston.restservice.repository" />
-      <option name="MAIN_CLASS_NAME" value="com.aston.restservice.repository.UserDaoImplTest" />
+      <option name="PACKAGE_NAME" value="com.aston.restservice.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.aston.restservice.service.impl.EventServiceImplTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -233,6 +220,14 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.aston.restservice.repository" />
       <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="restservice in aston-rest-service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston-rest-service" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/com/aston/restservice" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -327,11 +322,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.restservice in aston-rest-service" />
+        <item itemvalue="JUnit.EventServiceImplTest" />
         <item itemvalue="JUnit.UserServiceImplTest.saveUser" />
         <item itemvalue="JUnit.com.aston.restservice.repository in aston-rest-service" />
-        <item itemvalue="JUnit.ContactDaoImplTest" />
-        <item itemvalue="JUnit.UserDaoImplTest" />
-        <item itemvalue="JUnit.EventDaoImplTest" />
+        <item itemvalue="JUnit.ContactDaoImplTestImplTest" />
       </list>
     </recent_temporary>
   </component>
@@ -356,6 +351,15 @@
       <workItem from="1709028862175" duration="16064000" />
       <workItem from="1709229233697" duration="40390000" />
     </task>
+    <task id="LOCAL-00001" summary="add test">
+      <option name="closed" value="true" />
+      <created>1710180531465</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1710180531465</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +378,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="add test" />
+    <option name="LAST_COMMIT_MESSAGE" value="add test" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

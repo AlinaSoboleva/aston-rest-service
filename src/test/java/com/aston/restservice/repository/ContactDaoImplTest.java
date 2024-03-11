@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 
-public class ContactDaoImplTestBaseDao extends EventDaoImplTestBaseDao {
+public class ContactDaoImplTest extends EventDaoImplTest {
 
     ContactDaoImpl contactDao;
 

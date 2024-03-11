@@ -18,7 +18,7 @@ import static org.hamcrest.Matchers.hasSize;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 
-public class UserDaoImplTestBaseDao extends TestBaseDao {
+public class UserDaoImplTest extends TestBaseDao {
 
     private UserDaoImpl userDao;
 
