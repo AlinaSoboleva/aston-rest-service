@@ -1,0 +1,713 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="aston-rest-service:war exploded" />
+    </artifacts-to-build>
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b34b5111-3dfa-408b-bb73-62acf31c1c08" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/aston/restservice/service/UserServiceImpl.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2cdnGF1A3CKE0XOiFi8mTH0HCct" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_MARK_IGNORED_FILES_AS_EXCLUDED&quot;: &quot;true&quot;,
+    &quot;Database.Console.ShowToolbar&quot;: &quot;false&quot;,
+    &quot;JUnit.All in aston-rest-service.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ContactDaoImplTest.deleteById_usualCase.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ContactDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContactDaoImplTest.findById_whenContactNotFound_returnNull.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.ContactDaoImplTest.findById_whenContactNotFound_throwException.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ContactDaoImplTest.saveContact_usualCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContactDaoImplTest.updateContact_usualCase.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.EventDaoImplTest.addAndDeleteParticipant_usualCase.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.EventDaoImplTest.addParticipant_usualCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EventDaoImplTest.addTwoParticipantsAndDeleteParticipant_usualCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EventDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EventDaoImplTest.findAll_usualCase_returnEventList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EventDaoImplTest.findEventById_usualCase_returnEvent.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EventDaoImplTest.findEventById_whenEventNotFount_returnNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EventDaoImplTest.saveEvent_usualCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EventDaoImplTest.saveEvent_whenInitiatorIsNull_throwSQLException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EventDaoImplTest.updateEventTitle_usualCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.findAllUsers_usualCase_returnUsersList.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.findUserById_usualCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.findUserById_whenIdNotFound_returnNull.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.saveUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.saveUser_usualCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.saveUser_whenEmailExist_ThrowPSQLException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.saveUser_whenEmailIsNull_ThrowPSQLException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.saveUser_whenNameAndEmailExist.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserDaoImplTest.saveUser_whenNameAndEmailExist_.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.UserDaoImplTest.saveUser_whenNameAndEmailExist_ThrowPSQLException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.saveUser_whenNameIsNull_ThrowPSQLException.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.updateUserNameAndEmail_usualCase.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserDaoImplTest.updateUserName_usualCase.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserServiceImplTest.getAllUsers_returnUsersList.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserServiceImplTest.saveUser.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServletTest.doGet.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.UserServletTest.doPost.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserServletTest.doPostTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserServletTest.doPost_whenSendPostRequest_returnStatusIsCreated.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.com.aston.restservice.repository in aston-rest-service.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in aston-rest-service.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.repository in aston-rest-service.executor&quot;: &quot;Coverage&quot;,
+    &quot;JUnit.restservice in aston-rest-service.executor&quot;: &quot;Coverage&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.aston-rest-service [clean,compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.aston-rest-service [import,-U].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;Tomcat Server.Tomcat 9.0.85.executor&quot;: &quot;Debug&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alina/dev2/aston-rest-service/src/test/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.aston.restservice.service" />
+      <recent name="com.aston.restservice.dto" />
+      <recent name="com.aston.restservice.repository" />
+      <recent name="com.aston.restservice.model" />
+      <recent name="com.aston.restservice.exception" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.aston.restservice.service.impl" />
+      <recent name="com.aston.restservice.servlets" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn import -U" />
+      <command value="mvn clean compile" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.UserServiceImplTest.saveUser">
+    <configuration name="ContactDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston-rest-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aston.restservice.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aston.restservice.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.aston.restservice.repository.ContactDaoImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston-rest-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aston.restservice.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aston.restservice.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.aston.restservice.repository.EventDaoImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserDaoImplTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston-rest-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aston.restservice.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aston.restservice.repository" />
+      <option name="MAIN_CLASS_NAME" value="com.aston.restservice.repository.UserDaoImplTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceImplTest.saveUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston-rest-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aston.restservice.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aston.restservice.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="com.aston.restservice.service.impl.UserServiceImplTest" />
+      <option name="METHOD_NAME" value="saveUser" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="com.aston.restservice.repository in aston-rest-service" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="aston-rest-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.aston.restservice.repository.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.aston.restservice.repository" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Tomcat 9.0.85" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.85" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="aston-rest-service:war exploded">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="b2433979-dac2-49bc-a028-b7137a14123a" />
+        <option name="HTTP_PORT" value="8085" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="65396" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="aston-rest-service:war exploded" />
+        </option>
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.UserServiceImplTest.saveUser" />
+        <item itemvalue="JUnit.com.aston.restservice.repository in aston-rest-service" />
+        <item itemvalue="JUnit.ContactDaoImplTest" />
+        <item itemvalue="JUnit.UserDaoImplTest" />
+        <item itemvalue="JUnit.EventDaoImplTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-53826d6a" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b34b5111-3dfa-408b-bb73-62acf31c1c08" name="Changes" comment="" />
+      <created>1708450228235</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708450228235</updated>
+      <workItem from="1708450229593" duration="928000" />
+      <workItem from="1708451611129" duration="19451000" />
+      <workItem from="1708627148762" duration="77927000" />
+      <workItem from="1709028862175" duration="16064000" />
+      <workItem from="1709229233697" duration="40390000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>jar:///Library/Java/JavaVirtualMachines/amazon-corretto-17.jdk/Contents/Home/lib/src.zip!/java.sql/java/sql/Connection.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/service/impl/UserServiceImpl.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/servlets/EventServlet.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>97</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/servlets/EventServlet.java</url>
+          <line>169</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/servlets/EventServlet.java</url>
+          <line>176</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/servlets/EventServlet.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/service/impl/EventServiceImpl.java</url>
+          <line>83</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>116</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>151</line>
+          <option name="timeStamp" value="47" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>152</line>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/servlets/UserServletTest.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/service/impl/UserServiceImplTest.java</url>
+          <line>65</line>
+          <option name="timeStamp" value="54" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/service/impl/UserServiceImpl.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/service/impl/UserServiceImplTest.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="58" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/service/impl/UserServiceImplTest.java</url>
+          <line>56</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/servlets/UserServletTest.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/servlets/UserServletTest.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="61" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/servlets/UserServletTest.java</url>
+          <line>46</line>
+          <option name="timeStamp" value="64" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/servlets/UserServlet.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/servlets/UserServlet.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="67" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/util/ResponseSender.java</url>
+          <line>18</line>
+          <option name="timeStamp" value="69" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/servlets/UserServletTest.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="70" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/servlets/UserServletTest.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/servlets/UserServlet.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="75" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/servlets/UserServlet.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/util/GetProvider.java</url>
+          <line>51</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/service/impl/UserServiceImpl.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/service/impl/UserServiceImpl.java</url>
+          <line>20</line>
+          <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/util/GetProvider.java</url>
+          <line>39</line>
+          <option name="timeStamp" value="80" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/UserDaoImpl.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="81" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/UserDaoImpl.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="82" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>183</line>
+          <option name="timeStamp" value="86" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>154</line>
+          <option name="timeStamp" value="87" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>206</line>
+          <option name="timeStamp" value="88" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/UserDaoImplTest.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/UserDaoImpl.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="93" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/UserDaoImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="94" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>64</line>
+          <option name="timeStamp" value="97" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/service/impl/ContactServiceImpl.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="98" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/repository/impl/EventDaoImpl.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="99" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/EventDaoImplTest.java</url>
+          <line>158</line>
+          <option name="timeStamp" value="100" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/repository/ContactDaoImplTest.java</url>
+          <line>62</line>
+          <option name="timeStamp" value="102" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/service/impl/UserServiceImpl.java</url>
+          <line>24</line>
+          <properties class="com.aston.restservice.service.impl.UserServiceImpl">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="56" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/aston/restservice/service/impl/UserServiceImpl.java</url>
+          <line>15</line>
+          <properties field="userDao" class="com.aston.restservice.service.impl.UserServiceImpl" />
+          <option name="timeStamp" value="57" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/servlets/UserServletTest.java</url>
+          <line>42</line>
+          <properties field="httpServletResponse" class="com.aston.restservice.servlets.UserServletTest" />
+          <option name="timeStamp" value="62" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/test/java/com/aston/restservice/servlets/UserServletTest.java</url>
+          <line>44</line>
+          <properties field="userService" class="com.aston.restservice.servlets.UserServletTest" />
+          <option name="timeStamp" value="63" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/aston_rest_service$java_in_aston_rest_service.ic" NAME="java in aston-rest-service Coverage Results" MODIFIED="1710163494012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/aston_rest_service$EventServiceImplTest_saveEvent_whereEventTitleIsNull_throwException.ic" NAME="EventServiceImplTest.saveEvent_whereEventTitleIsNull_throwException Coverage Results" MODIFIED="1710175626577" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$EventServiceImplTest_getAllEvents_whereRequestPathIsNull.ic" NAME="EventServiceImplTest.getAllEvents_whereRequestPathIsNull Coverage Results" MODIFIED="1710176455863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$All_in_aston_rest_service.ic" NAME="All in aston-rest-service Coverage Results" MODIFIED="1709745219526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/aston_rest_service$UserServiceImplTest_saveUser_whenUserIdIsNotNull_returnUpdatedUser.ic" NAME="UserServiceImplTest.saveUser_whenUserIdIsNotNull_returnUpdatedUser Coverage Results" MODIFIED="1710162905232" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$ContactDaoImplTest_updateContact_usualCase.ic" NAME="ContactDaoImplTest.updateContact_usualCase Coverage Results" MODIFIED="1709745567655" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.repository.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$EventDaoImplTest.ic" NAME="EventDaoImplTest Coverage Results" MODIFIED="1709302390246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.repository.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$UserServiceImplTest_deleteUser.ic" NAME="UserServiceImplTest.deleteUser Coverage Results" MODIFIED="1710164810635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$UserServiceImplTest_getAllUsers.ic" NAME="UserServiceImplTest.getAllUsers Coverage Results" MODIFIED="1710164474849" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$EventServiceImplTest_saveEvent_whereEventIdIsNotNull_returnUpdatedEvent.ic" NAME="EventServiceImplTest.saveEvent_whereEventIdIsNotNull_returnUpdatedEvent Coverage Results" MODIFIED="1710177002826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$UserDaoImplTest.ic" NAME="UserDaoImplTest Coverage Results" MODIFIED="1709293501901" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.repository.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$ContactDaoImplTest_deleteById_usualCase.ic" NAME="ContactDaoImplTest.deleteById_usualCase Coverage Results" MODIFIED="1709746537351" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.repository.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$EventServiceImplTest_getAllEvents_whereRequestPathIsNotNull_returnEventById.ic" NAME="EventServiceImplTest.getAllEvents_whereRequestPathIsNotNull_returnEventById Coverage Results" MODIFIED="1710176825380" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$restservice_in_aston_rest_service.ic" NAME="restservice in aston-rest-service Coverage Results" MODIFIED="1710166452777" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/aston_rest_service$EventServiceImplTest_saveEvent_whereEventIdIsNull_returnSavedEvent.ic" NAME="EventServiceImplTest.saveEvent_whereEventIdIsNull_returnSavedEvent Coverage Results" MODIFIED="1710167301725" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.service.impl.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$ContactDaoImplTest_findById_whenContactNotFound_returnNull.ic" NAME="ContactDaoImplTest.findById_whenContactNotFound_returnNull Coverage Results" MODIFIED="1709746415165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.repository.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$UserDaoImplTest_saveUser_whenNameAndEmailExist_.ic" NAME="UserDaoImplTest.saveUser_whenNameAndEmailExist_ Coverage Results" MODIFIED="1709287257417" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.repository.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$UserServletTest_doPost_whenSendPostRequest_returnStatusIsCreated.ic" NAME="UserServletTest.doPost_whenSendPostRequest_returnStatusIsCreated Coverage Results" MODIFIED="1709034264585" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.servlets.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/aston_rest_service$repository_in_aston_rest_service.ic" NAME="repository in aston-rest-service Coverage Results" MODIFIED="1710163135621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/aston_rest_service$UserServiceImplTest_saveUser_whenUserNameIsNull_throwException.ic" NAME="UserServiceImplTest.saveUser_whenUserNameIsNull_throwException Coverage Results" MODIFIED="1710163923168" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.aston.restservice.service.impl.*</FILTER>
+    </SUITE>
+  </component>
+  <component name="com.vaadin.designer2.intellij.settings.SizePresetsSettingsComponent">
+    <option name="sizePresets">
+      <list>
+        <SizePreset>
+          <option name="caption" value="Phone" />
+          <option name="height" value="568" />
+          <option name="width" value="320" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Tablet" />
+          <option name="height" value="1024" />
+          <option name="width" value="768" />
+        </SizePreset>
+        <SizePreset>
+          <option name="caption" value="Desktop" />
+          <option name="height" value="900" />
+          <option name="width" value="1440" />
+        </SizePreset>
+      </list>
+    </option>
+  </component>
+</project>
