@@ -5,6 +5,7 @@ import com.aston.restservice.model.Event;
 import com.aston.restservice.repository.impl.ContactDaoImpl;
 import com.aston.restservice.util.GetProvider;
 import org.junit.Ignore;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +17,6 @@ import static com.aston.restservice.testUtil.TestGetProvider.getContact;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 
 public class ContactDaoImplTest extends EventDaoImplTest {
 
@@ -31,7 +31,7 @@ public class ContactDaoImplTest extends EventDaoImplTest {
         contactDao = (ContactDaoImpl) GetProvider.getContactDao();
         contactDao.setConnectionBuilder(getConnectionBuilder());
         savedEvent = eventDao.save(firstEvent).get();
-        contact = getContact(CONTACT_PHONE, CONTACT_ADDRESS,savedEvent.getId());
+        contact = getContact(CONTACT_PHONE, CONTACT_ADDRESS, savedEvent.getId());
     }
 
     @Test
@@ -40,7 +40,7 @@ public class ContactDaoImplTest extends EventDaoImplTest {
 
         Event eventWithContact = eventDao.findById(savedEvent.getId()).get();
 
-        assertNotNull(eventWithContact.getContact());
+        Assertions.assertNotNull(eventWithContact.getContact());
         assertThat(eventWithContact.getContact().getId(), equalTo(savedContact.getId()));
     }
 

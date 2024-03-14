@@ -12,10 +12,7 @@ import static com.aston.restservice.util.Constants.CHARACTER_ENCODING;
 @Slf4j
 public class ResponseSender {
 
-    private ResponseSender() {
-    }
-
-    public static void sendResponse(HttpServletResponse resp, Integer status, Object body) {
+    public void sendResponse(HttpServletResponse resp, Integer status, Object body) {
         resp.setCharacterEncoding(CHARACTER_ENCODING);
         resp.setContentType(APPLICATION_JSON);
         resp.setStatus(status);

@@ -15,13 +15,13 @@ public class Event {
 
     private String description;
 
-     private User initiator;
+    private User initiator;
 
     private Contact contact;
 
     private Set<User> participants = new HashSet<>();
 
-    public Long getInitiatorId(){
+    public Long getInitiatorId() {
         if (initiator == null) return 0L;
         return initiator.getId();
     }

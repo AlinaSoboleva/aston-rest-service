@@ -18,7 +18,6 @@ public class ContactDaoImpl extends BaseDao implements ContactDao {
     private static final ContactDaoImpl INSTANCE = new ContactDaoImpl();
 
     private ContactDaoImpl() {
-
     }
 
     public static synchronized ContactDaoImpl getInstance() {

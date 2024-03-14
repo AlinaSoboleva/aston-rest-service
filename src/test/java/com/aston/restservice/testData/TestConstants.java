@@ -28,4 +28,28 @@ public class TestConstants {
     public static final String UPDATED_USER_EMAIL = "ivan@mail.ru";
     public static final String UPDATED_EVENT_TITLE = "Lost";
     public static final String UPDATED_CONTACT_ADDRESS = "Russia, Kazan, Rubanenko Street 15";
+
+    public static final String USER_JSON = "{\n" +
+            "    \"name\": \"Alina123\",\n" +
+            "    \"email\": \"mail@mail.ru\"\n" +
+            "}";
+
+    public static final String INCORRECT_JSON = "{\n" +
+            "     field : value,\n" +
+            "     field : value\n" +
+            "}";
+
+    public static final String EVENT_JSON = "{\n" +
+            "    \"title\": \"Event\",\n" +
+            "    \"description\": \"description2\"\n" +
+            "}";
+
+    public static final String CONTACT_JSON = "{\n" +
+            "    \"phone\": \"89003271434\",\n" +
+            "    \"address\": \"my new address\"\n" +
+            "}";
+
+    public static final String CONTACT_PATH = "event/" + FIRST_ID + "/contact";
+    public static final String PARTICIPANT_PATH = "event/" + FIRST_ID + "/participants";
+    public static final String INCORRECT_PATH = "incorrect";
 }

@@ -1,5 +1,6 @@
 package com.aston.restservice.util;
 
+import com.aston.restservice.exception.ConflictException;
 import com.aston.restservice.exception.EntityNotFoundException;
 import com.aston.restservice.exception.HttpException;
 import com.aston.restservice.model.Contact;
@@ -55,8 +56,15 @@ public class GetProvider {
     }
 
     public static Long getEntityId(String requestPath) {
-        String[] pathArray = requestPath.split("/");
-        return Long.parseLong(pathArray[1]);
+        Long id;
+        if (requestPath == null) throw new ConflictException("Request path must contain an id");
+        try {
+            String[] pathArray = requestPath.split("/");
+            id = Long.parseLong(pathArray[1]);
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new ConflictException("incorrect path");
+        }
+        return id;
     }
 
     public static String getBody(HttpServletRequest req) {

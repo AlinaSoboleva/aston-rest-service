@@ -16,7 +16,6 @@ public class ContactMapper {
                 .phone(contact.getPhone())
                 .address(contact.getAddress())
                 .build();
-
     }
 
     public static Contact toEntity(ContactDto contactDto, Long eventId) {

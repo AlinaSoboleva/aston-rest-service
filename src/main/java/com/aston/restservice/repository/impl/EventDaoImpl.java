@@ -182,7 +182,7 @@ public class EventDaoImpl extends BaseDao implements EventDao {
         Set<User> participants = new HashSet<>();
 
         User user = makeParticipant(resultSet);
-        if (user == null) return participants;
+        if (user == null || user.getId() == 0) return participants;
         participants.add(user);
         while (resultSet.next()) {
             participants.add(makeParticipant(resultSet));

@@ -10,7 +10,7 @@ import java.util.Set;
 @Getter
 @AllArgsConstructor
 @ToString
-public class EventResponseDto extends EventShortDto{
+public class EventResponseDto extends EventShortDto {
 
     @ToString.Exclude
     private ContactDto contacts;

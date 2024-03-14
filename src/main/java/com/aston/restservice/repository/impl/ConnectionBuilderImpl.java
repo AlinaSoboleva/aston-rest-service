@@ -39,16 +39,6 @@ public class ConnectionBuilderImpl implements ConnectionBuilder {
         return DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
     }
 
-//    @Override
-//    public Connection getConnection(String jdbcDriver, String jdbcURL, String jdbcUsername, String jdbcPassword) throws SQLException, ClassNotFoundException {
-//     this.jdbcDriver = jdbcDriver;
-//     this.jdbcURL = jdbcURL;
-//     this.jdbcPassword = jdbcPassword;
-//     this.jdbcUsername = jdbcUsername;
-//        Class.forName(jdbcDriver);
-//        return DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
-//    }
-
     private void init() throws SQLException {
         Properties properties = this.loadProperties(DB_CONFIG);
         this.jdbcURL = properties.getProperty(config + ".jdbc.url");

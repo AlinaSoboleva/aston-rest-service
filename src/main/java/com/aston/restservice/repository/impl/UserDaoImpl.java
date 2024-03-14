@@ -20,7 +20,6 @@ public class UserDaoImpl extends BaseDao implements UserDao {
     private static final UserDaoImpl INSTANCE = new UserDaoImpl();
 
     private UserDaoImpl() {
-    //    INSTANCE.setConnectionBuilder(new ConnectionBuilderImpl());
     }
 
     public static synchronized UserDaoImpl getInstance() {

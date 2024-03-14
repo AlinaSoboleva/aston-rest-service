@@ -24,11 +24,17 @@ import java.util.List;
 public class UserServlet extends HttpServlet {
 
     private final UserService userService;
+    private final ResponseSender responseSender;
 
     public UserServlet() {
         this.userService = new UserServiceImpl(GetProvider.getUserDao());
+        this.responseSender = new ResponseSender();
     }
 
+    public UserServlet(UserService userService, ResponseSender responseSender) {
+        this.userService = userService;
+        this.responseSender = responseSender;
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
@@ -38,15 +44,15 @@ public class UserServlet extends HttpServlet {
         try {
             UserDto userDto = userDtoFromJson(body, resp);
             savedUserDto = userService.saveUser(userDto);
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_CREATED, savedUserDto);
+            responseSender.sendResponse(resp, HttpServletResponse.SC_CREATED, savedUserDto);
         } catch (SQLException e) {
             log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
+            responseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
         } catch (HttpException e) {
             log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
+            responseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
         }
     }
 
@@ -54,15 +60,15 @@ public class UserServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         try {
             List<UserDto> users = userService.getAllUsers();
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_OK, users);
+            responseSender.sendResponse(resp, HttpServletResponse.SC_OK, users);
         } catch (SQLException e) {
             log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
+            responseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
         } catch (HttpException e) {
             log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
+            responseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
         }
     }
 
@@ -71,16 +77,16 @@ public class UserServlet extends HttpServlet {
         String requestPath = req.getPathInfo();
         try {
             Long id = userService.deleteUser(requestPath);
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_OK,
+            responseSender.sendResponse(resp, HttpServletResponse.SC_OK,
                     new Response(String.format("User with id %d was successfully deleted", id)));
         } catch (SQLException | EntityNotFoundException e) {
             log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
+            responseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST, response);
         } catch (HttpException e) {
             log.warn(Arrays.toString(e.getStackTrace()));
             Response response = new Response(e.getMessage());
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
+            responseSender.sendResponse(resp, HttpServletResponse.SC_INTERNAL_SERVER_ERROR, response);
         }
     }
 
@@ -90,7 +96,7 @@ public class UserServlet extends HttpServlet {
             userDto = GetProvider.getObjectMapper().readValue(body, UserDto.class);
         } catch (JsonProcessingException e) {
             log.warn(Arrays.toString(e.getStackTrace()));
-            ResponseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST,
+            responseSender.sendResponse(resp, HttpServletResponse.SC_BAD_REQUEST,
                     new Response("Incorrect Json received"));
         }
         return userDto;

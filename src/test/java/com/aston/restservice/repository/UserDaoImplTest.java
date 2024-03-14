@@ -3,7 +3,11 @@ package com.aston.restservice.repository;
 import com.aston.restservice.model.User;
 import com.aston.restservice.repository.impl.UserDaoImpl;
 import com.aston.restservice.util.GetProvider;
-import org.junit.jupiter.api.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.postgresql.util.PSQLException;
 
 import java.sql.SQLException;
@@ -15,10 +19,10 @@ import static com.aston.restservice.testUtil.TestGetProvider.getUser;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertThrows;
 
-public class UserDaoImplTest extends TestBaseDao {
+@ExtendWith(MockitoExtension.class)
+class UserDaoImplTest extends TestBaseDao {
 
     private UserDaoImpl userDao;
 
@@ -33,7 +37,7 @@ public class UserDaoImplTest extends TestBaseDao {
 
 
     @Test
-    public void saveUser_usualCase() throws SQLException {
+    void saveUser_usualCase() throws SQLException {
         Optional<User> savedUserOpt = userDao.save(firstUser);
 
         assertThat(savedUserOpt.isPresent(), equalTo(true));
@@ -47,7 +51,7 @@ public class UserDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void saveUser_whenEmailExist_ThrowPSQLException() throws SQLException {
+    void saveUser_whenEmailExist_ThrowPSQLException() throws SQLException {
         Optional<User> savedUserOpt = userDao.save(firstUser);
 
         User secondUser = getUser(SECOND_USER_NAME, SECOND_USER_EMAIL);
@@ -62,7 +66,7 @@ public class UserDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void saveUser_whenNameIsNull_ThrowPSQLException() {
+    void saveUser_whenNameIsNull_ThrowPSQLException() {
         firstUser.setName(null);
 
         Exception exception = assertThrows(SQLException.class, () ->
@@ -72,7 +76,7 @@ public class UserDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void saveUser_whenEmailIsNull_ThrowPSQLException() {
+    void saveUser_whenEmailIsNull_ThrowPSQLException() {
         firstUser.setEmail(null);
 
         Exception exception = assertThrows(SQLException.class, () ->
@@ -82,7 +86,7 @@ public class UserDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void findUserById_usualCase() throws SQLException {
+    void findUserById_usualCase() throws SQLException {
         Optional<User> savedUserOpt = userDao.save(firstUser);
 
         Optional<User> resultOpt = userDao.findById(savedUserOpt.get().getId());
@@ -95,14 +99,14 @@ public class UserDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void findUserById_whenIdNotFound_returnNull() throws SQLException {
+    void findUserById_whenIdNotFound_returnNull() throws SQLException {
         Optional<User> resultOpt = userDao.findById(FIRST_ID);
 
-        assertFalse(resultOpt.isPresent());
+        Assertions.assertFalse(resultOpt.isPresent());
     }
 
     @Test
-    public void findAllUsers_usualCase_returnUsersList() throws SQLException {
+    void findAllUsers_usualCase_returnUsersList() throws SQLException {
         Optional<User> savedUserOpt = userDao.save(firstUser);
 
         User secondUser = getUser(SECOND_USER_NAME, SECOND_USER_EMAIL);
@@ -117,12 +121,12 @@ public class UserDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void updateUserName_usualCase() throws SQLException {
+    void updateUserName_usualCase() throws SQLException {
         User savedUser = userDao.save(firstUser).get();
         savedUser.setName(UPDATED_USER_NAME);
 
         userDao.update(savedUser);
-        Optional<User> updatedUser  = userDao.findById(savedUser.getId());
+        Optional<User> updatedUser = userDao.findById(savedUser.getId());
         userDao.deleteById(savedUser.getId());
 
         assertThat(updatedUser.isPresent(), equalTo(true));
@@ -131,12 +135,12 @@ public class UserDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void updateUserEmail_usualCase() throws SQLException {
+    void updateUserEmail_usualCase() throws SQLException {
         User savedUser = userDao.save(firstUser).get();
         savedUser.setEmail(UPDATED_USER_EMAIL);
 
         userDao.update(savedUser);
-        Optional<User> updatedUser  = userDao.findById(savedUser.getId());
+        Optional<User> updatedUser = userDao.findById(savedUser.getId());
         userDao.deleteById(savedUser.getId());
 
         assertThat(updatedUser.isPresent(), equalTo(true));

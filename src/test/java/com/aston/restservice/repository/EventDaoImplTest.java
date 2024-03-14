@@ -22,7 +22,7 @@ import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.hasSize;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class EventDaoImplTest extends TestBaseDao {
+class EventDaoImplTest extends TestBaseDao {
 
     EventDaoImpl eventDao;
 
@@ -53,7 +53,7 @@ public class EventDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void saveEvent_usualCase() throws SQLException {
+    void saveEvent_usualCase() throws SQLException {
         Optional<Event> savedEventOpt = eventDao.save(firstEvent);
 
         assertThat(savedEventOpt.isPresent(), equalTo(true));
@@ -68,7 +68,7 @@ public class EventDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void saveEvent_whenInitiatorIsNull_throwSQLException() throws SQLException {
+    void saveEvent_whenInitiatorIsNull_throwSQLException() throws SQLException {
         firstEvent.setInitiator(null);
 
         Exception e = assertThrows(PSQLException.class, () ->
@@ -78,7 +78,7 @@ public class EventDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void saveEvent_whenTitleIsNull_throwSQLException() throws SQLException {
+    void saveEvent_whenTitleIsNull_throwSQLException() throws SQLException {
         firstEvent.setTitle(null);
 
         Exception e = assertThrows(PSQLException.class, () ->
@@ -88,7 +88,7 @@ public class EventDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void updateEventTitle_usualCase() throws SQLException {
+    void updateEventTitle_usualCase() throws SQLException {
         Event savedEvent = eventDao.save(firstEvent).get();
         savedEvent.setTitle(UPDATED_EVENT_TITLE);
 
@@ -102,14 +102,14 @@ public class EventDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void findEventById_whenEventNotFount_returnNull() throws SQLException {
+    void findEventById_whenEventNotFount_returnNull() throws SQLException {
         Optional<Event> event = eventDao.findById(FIRST_ID);
 
         assertFalse(event.isPresent());
     }
 
     @Test
-    public void findEventById_usualCase_returnEvent() throws SQLException {
+    void findEventById_usualCase_returnEvent() throws SQLException {
         Event savedEvent = eventDao.save(firstEvent).get();
 
         Optional<Event> event = eventDao.findById(savedEvent.getId());
@@ -122,7 +122,7 @@ public class EventDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void findAll_usualCase_returnEventList() throws SQLException {
+    void findAll_usualCase_returnEventList() throws SQLException {
         Event secondEvent = getEvent(SECOND_EVENT_TITLE, SECOND_EVENT_DESCRIPTION, initiator);
 
         Event savedEvent = eventDao.save(firstEvent).get();
@@ -138,7 +138,7 @@ public class EventDaoImplTest extends TestBaseDao {
     }
 
     @Test
-    public void addTwoParticipantsAndDeleteParticipant_usualCase() throws SQLException {
+    void addTwoParticipantsAndDeleteParticipant_usualCase() throws SQLException {
         Event savedEvent = eventDao.save(firstEvent).get();
         User participant = userDao.save(getUser(SECOND_USER_NAME, SECOND_USER_EMAIL)).get();
         User participant2 = userDao.save(getUser(THIRD_USER_NAME, THIRD_USER_EMAIL)).get();

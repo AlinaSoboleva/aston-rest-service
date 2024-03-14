@@ -96,7 +96,7 @@ class UserServiceImplTest {
     }
 
     @Test
-    void deleteUser() throws SQLException {
+    void deleteUser_returnDeletedUserId() throws SQLException {
         User user = getUser(FIRST_USER_NAME, FIRST_USER_EMAIL);
         user.setId(FIRST_ID);
         try (MockedStatic<GetProvider> getProvider = Mockito.mockStatic(GetProvider.class)) {

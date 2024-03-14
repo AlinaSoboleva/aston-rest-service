@@ -1,15 +1,10 @@
 package com.aston.restservice.repository;
 
-import com.aston.restservice.model.Contact;
-import com.aston.restservice.model.Event;
-import com.aston.restservice.model.User;
 import com.aston.restservice.repository.impl.ConnectionBuilderImpl;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
 import org.testcontainers.containers.PostgreSQLContainer;
-
-import static com.aston.restservice.testData.TestConstants.*;
 
 @TestInstance(value = TestInstance.Lifecycle.PER_CLASS)
 public class TestBaseDao {

@@ -2,6 +2,7 @@ package com.aston.restservice.service.impl;
 
 import com.aston.restservice.dto.EventResponseDto;
 import com.aston.restservice.dto.EventShortDto;
+import com.aston.restservice.exception.ConflictException;
 import com.aston.restservice.exception.HttpException;
 import com.aston.restservice.mapper.EventMapper;
 import com.aston.restservice.model.Event;
@@ -49,7 +50,7 @@ class EventServiceImplTest {
     }
 
     @Test
-    void saveEvent_whereEventIdIsNull_returnSavedEvent() throws SQLException {
+    void saveEvent_whenEventIdIsNull_returnSavedEvent() throws SQLException {
         initiator.setId(FIRST_ID);
         Event expected = getEvent(FIRST_EVENT_TITLE, FIRST_EVENT_DESCRIPTION, initiator);
         when(eventDao.save(any(Event.class))).thenReturn(Optional.of(expected));
@@ -65,7 +66,7 @@ class EventServiceImplTest {
     }
 
     @Test
-    void saveEvent_whereEventTitleIsNull_throwException() throws SQLException {
+    void saveEvent_whenEventTitleIsNull_throwException() throws SQLException {
         initiator.setId(FIRST_ID);
         Event expected = getEvent(null, FIRST_EVENT_DESCRIPTION, initiator);
         when(eventDao.save(any(Event.class))).thenReturn(Optional.empty());
@@ -82,7 +83,7 @@ class EventServiceImplTest {
     }
 
     @Test
-    void saveEvent_whereEventIdIsNotNull_returnUpdatedEvent() throws SQLException {
+    void saveEvent_whenEventIdIsNotNull_returnUpdatedEvent() throws SQLException {
         initiator.setId(FIRST_ID);
         Event updatedEvent = getEvent(UPDATED_EVENT_TITLE, null, initiator);
         updatedEvent.setId(FIRST_ID);
@@ -97,6 +98,26 @@ class EventServiceImplTest {
 
             assertThat(actual.getTitle(), equalTo(updatedEvent.getTitle()));
             verify(eventDao, times(1)).update(any(Event.class));
+            verify(eventDao, never()).save(any(Event.class));
+        }
+    }
+
+    @Test
+    void updateEvent_whenUserIsNotInitiator_throwException() throws SQLException {
+        initiator.setId(FIRST_ID);
+        Event updatedEvent = getEvent(UPDATED_EVENT_TITLE, null, initiator);
+        updatedEvent.setId(FIRST_ID);
+        Event event = getEvent(FIRST_EVENT_TITLE, FIRST_EVENT_DESCRIPTION, initiator);
+        event.setId(FIRST_ID);
+
+        try (MockedStatic<GetProvider> getProvider = Mockito.mockStatic(GetProvider.class)) {
+            getProvider.when(() -> GetProvider.getUser(anyLong())).thenReturn(initiator);
+            getProvider.when(() -> GetProvider.getEvent(anyLong())).thenReturn(event);
+            Exception exception = assertThrows(Exception.class, () ->
+                    eventService.saveEvent(EventMapper.toDto(updatedEvent), SECOND_ID));
+
+            assertThat(exception.getClass(), equalTo(ConflictException.class));
+            verify(eventDao, never()).update(any(Event.class));
             verify(eventDao, never()).save(any(Event.class));
         }
     }
@@ -132,11 +153,42 @@ class EventServiceImplTest {
     }
 
     @Test
-    void deleteEvent() {
+    void deleteEvent() throws SQLException {
+        initiator.setId(FIRST_ID);
+        Event expected = getEvent(FIRST_EVENT_TITLE, FIRST_EVENT_DESCRIPTION, initiator);
+
+        try (MockedStatic<GetProvider> getProvider = Mockito.mockStatic(GetProvider.class)) {
+            getProvider.when(() -> GetProvider.getEntityId(anyString())).thenReturn(FIRST_ID);
+            getProvider.when(() -> GetProvider.getEvent(anyLong())).thenReturn(expected);
+            doNothing().when(eventDao).deleteById(anyLong());
+
+            Long deletedEventId = eventService.deleteEvent("requestPath", FIRST_ID);
+
+            assertThat(deletedEventId, equalTo(FIRST_ID));
+            verify(eventDao, times(1)).deleteById(anyLong());
+        }
     }
 
     @Test
-    void addParticipant() {
+    void addOneParticipantTwoTimes_firstTimeWillAddAndSecondTimeWillDelete() throws SQLException {
+        initiator.setId(FIRST_ID);
+        Event expected = getEvent(FIRST_EVENT_TITLE, FIRST_EVENT_DESCRIPTION, initiator);
+
+        try (MockedStatic<GetProvider> getProvider = Mockito.mockStatic(GetProvider.class)) {
+            getProvider.when(() -> GetProvider.getUser(anyLong())).thenReturn(getUser(SECOND_USER_NAME, SECOND_USER_EMAIL));
+            getProvider.when(() -> GetProvider.getEvent(anyLong())).thenReturn(expected);
+            when(eventDao.addParticipants(anyLong(), anyLong())).thenReturn(true);
+
+            EventResponseDto actual = eventService.addParticipant(FIRST_ID, SECOND_ID);
+
+            assertThat(actual.getParticipants(), hasSize(1));
+            assertThat(actual.getParticipants().iterator().next().getName(), equalTo(SECOND_USER_NAME));
+
+            when(eventDao.addParticipants(anyLong(), anyLong())).thenReturn(false);
+
+            actual = eventService.addParticipant(FIRST_ID, SECOND_ID);
+            assertThat(actual.getParticipants(), hasSize(0));
+        }
     }
 
 }
