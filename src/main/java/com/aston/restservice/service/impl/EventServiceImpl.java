@@ -53,6 +53,7 @@ public class EventServiceImpl implements EventService {
             Long id = GetProvider.getEntityId(requestPath);
             Event eventById = GetProvider.getEvent(id);
             events.add(eventById);
+            return events.stream().map(EventMapper::toResponseDto).collect(Collectors.toList());
         } else {
             events = eventDao.findAll();
         }
